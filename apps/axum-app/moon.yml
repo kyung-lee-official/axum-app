@@ -1,0 +1,24 @@
+language: rust
+layer: application
+
+fileGroups:
+  sources:
+    - 'src/**/*'
+    - 'Cargo.toml'
+
+tasks:
+  dev:
+    command: 'cargo run'
+    preset: server
+  build:
+    command: 'cargo build --release'
+    inputs:
+      - '@globs(sources)'
+  check:
+    command: 'cargo check'
+    inputs:
+      - '@globs(sources)'
+  test:
+    command: 'cargo test'
+    inputs:
+      - '@globs(sources)'
