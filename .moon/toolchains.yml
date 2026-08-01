@@ -1,1 +1,3 @@
-rust: {}
+rust:
+  bins:
+    - 'cargo-watch'

@@ -8,7 +8,7 @@ fileGroups:
 
 tasks:
   dev:
-    command: 'cargo run'
+    command: 'cargo watch -x run'
     preset: server
   build:
     command: 'cargo build --release'
