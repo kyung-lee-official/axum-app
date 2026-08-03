@@ -1,3 +1,4 @@
 rust:
   bins:
     - 'cargo-watch'
+    - 'sea-orm-cli'
