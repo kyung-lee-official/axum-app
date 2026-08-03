@@ -1,3 +1,3 @@
 [workspace]
 resolver = "2"
-members = ["apps/axum-app"]
+members = ["apps/axum-app", "migration"]
