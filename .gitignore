@@ -7,3 +7,6 @@ target/
 
 # env
 .env
+
+# cursor (separate rules repo)
+.cursor/
