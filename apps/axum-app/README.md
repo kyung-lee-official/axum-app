@@ -75,6 +75,22 @@ erDiagram
 - `roles (app, name)` — unique
 - `user_app_roles (user_id, role_id)` — unique
 
+## Auth (session cookie)
+
+Session id is stored in a **private** (encrypted) httpOnly cookie `sid`, backed by the `sessions` table.
+
+| Method | Path | Notes |
+| ------ | ---- | ----- |
+| POST | `/api/auth/register` | Creates user + `shop` app; sets session |
+| POST | `/api/auth/sign-in` | Requires `shop` entitlement |
+| POST | `/api/auth/sign-out` | Clears session |
+| GET | `/api/auth/me` | Current user (shop) |
+| POST | `/api/internal/auth/sign-in` | Requires `internal` entitlement (no public register) |
+| POST | `/api/internal/auth/sign-out` | |
+| GET | `/api/internal/auth/me` | |
+
+Env: `COOKIE_KEY` (≥64 chars), `COOKIE_SECURE`, `SESSION_TTL_HOURS`, `CORS_ORIGINS` — see `.env.example`.
+
 ## Local run
 
 ```powershell
