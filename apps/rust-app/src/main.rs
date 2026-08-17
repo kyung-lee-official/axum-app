@@ -1,3 +1,6 @@
-fn main() {
-    println!("Hello from rust-app");
+mod syntax;
+
+#[tokio::main]
+async fn main() {
+    syntax::r#async::tokio::demo::run().await;
 }
