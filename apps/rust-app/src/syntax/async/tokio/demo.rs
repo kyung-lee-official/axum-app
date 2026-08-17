@@ -1,6 +1,7 @@
 //! Minimal Tokio demo: spawn an async task from a sync function.
 
-use std::time::Duration;
+// use std::time::Duration;
+use std::future::ready;
 
 pub async fn run() {
     let handle = sync_fn();
@@ -9,7 +10,8 @@ pub async fn run() {
 
 async fn async_fn() {
     println!("async_fn: sleeping 1000ms…");
-    tokio::time::sleep(Duration::from_millis(1000)).await;
+    // tokio::time::sleep(Duration::from_millis(1000)).await;
+    ready(()).await;
     println!("async_fn: done");
 }
 
