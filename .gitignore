@@ -8,5 +8,5 @@ target/
 # env
 .env
 
-# cursor (separate rules repo)
-.cursor/
+# opencode (separate rules repo)
+.opencode/
